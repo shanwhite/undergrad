@@ -1,7 +1,11 @@
 # Undergrad
-A compilation of my assignments throughout my undergraduate degree.
+A compilation of my assignments throughout my undergraduate degree, BSc Multimedia, Mobile & Web Development.
 
 ## List of Modules
+1st Year
+* CS161 - Introduction to Computer Science 1 (Java)
+* CS162 - Introduction to Computer Science 2 (Java)
+
 2nd Year
 * CS210 - Algorithms & Data Structures 1 (Java)
 * CS211 - Algorithms & Data Structures 2 (Java)
