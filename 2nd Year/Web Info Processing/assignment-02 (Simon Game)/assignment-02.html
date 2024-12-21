@@ -1,0 +1,39 @@
+<!-- TESTED IN FIREFOX -->
+
+<!DOCTYPE html>
+    <head>
+        <title>Simon Game</title>
+        <link rel="stylesheet" href="assignment-02.css">
+        <!-- Orbitron as the required font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Single-Player Simon Memory Game</h1>
+        <div class="container">
+            <span class="high score"><div id="best" style="margin-top:9px;">00</div></span>
+            <button class="start" id="start">START</button>
+            <span class="current score"><div id="latest" style="margin-top:9px;">00</div></span>
+
+            <!-- button below the start button, flashes to green when start button is clicked -->
+            <div id="status"></div>
+
+            <!-- coloured circles for the game -->
+            <div class="red coloured circle" id="red"></div>
+            <div class="yellow coloured circle" id="yellow"></div>
+            <div class="green coloured circle" id="green"></div>
+            <div class="blue coloured circle" id="blue"></div>
+
+            <!-- dark grey circles around the coloured circles -->
+            <div class="shadow circle one"></div>
+            <div class="shadow circle two"></div>
+            <div class="shadow circle three"></div>
+            <div class="shadow circle four"></div>
+
+            <!-- big circle that connects the coloured circles -->
+            <div class="main circle"></div>
+        </div>
+    </body>
+    <script src="assignment-02.js"></script>
+</html>

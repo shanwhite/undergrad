@@ -1,0 +1,301 @@
+<!-- tested on Firefox 123.0.1 with macOS (Sonoma 14.1.2) -->
+
+<!-- referenced from CS230 lecture slides & videos -->
+<!-- as well as w3schools: JSON, jQuery, AJAX -->
+
+<!-- REQUIREMENT (ii): FRONTEND -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUD Online Database</title>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- importing 'Nunito Sans' font just because -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <style>
+            * {      /* the asterisk means it changes all elements */
+                font-family: "Nunito Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            h2 {
+                font-weight: 700;
+                margin-bottom: 0;
+            }
+
+            #required {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 15px;
+                font-style: italic;
+                color: #cf1923;
+            }
+
+            .asterisk {
+                color: #cf1923;
+            }
+
+            input {
+                width: 97%;
+                display: block;
+                padding: 10px 15px;
+                margin: 10px 0;
+            }
+
+            button {
+                background-color: #4772e6;    /* button colour */
+                color: #fafafa;               /* text colour */
+                font-size: 15px;
+                padding: 10px 15px;
+                margin: 10px 0;
+                border: none;
+                border-radius: 5px;
+            }
+
+            button:hover {
+                background-color: #819eed;    /* button colour when cursor hovers over button */
+            }
+
+            #showDatabase {             /* retrieve user database text area */
+                height: 100px;
+                width: 97%;
+                padding: 10px 15px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- FIRST SECTION: To create & input data -->
+        <form id="createForm">
+            <h2>User Information:</h2>
+            <p id="required">*required</p>
+            <!-- User Information -->
+            <label>Title</label>
+            <input id="title" placeholder="Mx, Ms, Mr, Mrs, Miss, Dr or Other (specify)" type="text">
+            <label>First Name(s)<label class="asterisk">*</label></label>
+            <input id="firstname" placeholder="First Name(s)" type="text" required="">
+            <label>Surname<label class="asterisk">*</label></label>
+            <input id="surname" placeholder="Surname" type="text" required="">
+            <label>Mobile<label class="asterisk">*</label></label>
+            <input id="mobile" placeholder="Mobile Number" type="text" required="">
+            <label>Email<label class="asterisk">*</label></label>
+            <input id="email" placeholder="Email Address" type="text" required="">
+            <br>
+            <!-- Home Address -->
+            <label>Home Address Line 1<label class="asterisk">*</label></label>
+            <input id="home1" placeholder="Home Address Line 1" type="text" required="">
+            <label>Home Address Line 2</label>
+            <input id="home2" placeholder="Home Address Line 2" type="text">
+            <label>Home Town<label class="asterisk">*</label></label>
+            <input id="hometown" placeholder="Home Town" type="text" required="">
+            <label>Home County/City<label class="asterisk">*</label></label>
+            <input id="homecc" placeholder="Home County/City" type="text" required="">
+            <label>Home Eircode</label>
+            <input id="homeeircode" placeholder="Home Eircode" type="text">
+            <br>
+            <!-- Shipping Address -->
+            <label>Shipping Address Line 1<label class="asterisk">*</label></label>
+            <input id="ship1" placeholder="Shipping Address Line 1" type="text" required="">
+            <label>Shipping Address Line 2</label>
+            <input id="ship2" placeholder="Shipping Address Line 2" type="text">
+            <label>Shipping Town<label class="asterisk">*</label></label>
+            <input id="shiptown" placeholder="Shipping Town" type="text" required="">
+            <label>Shipping County/City<label class="asterisk">*</label></label>
+            <input id="shipcc" placeholder="Shipping County/City" type="text" required="">
+            <label>Shipping Eircode</label>
+            <input id="shipeircode" placeholder="Shipping Eircode" type="text">
+            <button id="createBtn" type="submit">Submit User Information</button>      <!-- button for C (create) -->
+            <!-- EXTRA CREDIT: To update data -->
+            <form id="updateForm">
+                <button id="updateBtn" type="submit">Update User Information</button>            <!-- button for U (update) -->
+            </form>
+        </form>
+        <br>
+        <br>
+        <!-- SECOND SECTION: To retrieve data -->
+        <form id="retrieveForm">
+            <h2>User Database:</h2>
+            <textarea id="showDatabase" placeholder="Database displayed here"></textarea>
+            <button id="retrieveBtn" type="submit">Retrieve User Database</button>       <!-- button for R (retrieve) -->
+        </form>
+        <br>
+        <br>
+        <!-- EXTRA CREDIT: To delete user from database -->
+        <form id="deleteForm">
+            <h2>User Information (to Delete):</h2>
+            <p id="required">*required</p>
+            <label>First Name(s)<label class="asterisk">*</label></label>
+            <input id="firstname" placeholder="First Name(s)" type="text" required="">
+            <label>Surname<label class="asterisk">*</label></label>
+            <input id="surname" placeholder="Surname" type="text" required="">
+            <label>Mobile<label class="asterisk">*</label></label>
+            <input id="mobile" placeholder="Mobile Number" type="text" required="">
+            <label>Email<label class="asterisk">*</label></label>
+            <input id="email" placeholder="Email Address" type="text" required="">
+            <button id="deleteBtn" type="submit">Delete User</button>            <!-- button for D (delete) -->
+        </form>
+        <!-- code for modal from John's tutorial (Inter-Semester Break) -->
+        <!-- Modal Popup used to confirm User Data was sent and added to Database 
+             W3.CSS Styled Form generated using W3.CSS modal demos
+             https://www.w3schools.com/w3css/w3css_modal.asp -->
+        <div id="modalUserAdded" class="w3-modal w3-animate-opacity">
+            <div class="w3-modal-content w3-card-4">
+                <header class="w3-container w3-blue-grey">
+                    <span onclick="document.getElementById('modalUserAdded').style.display='none'"
+                        class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h2>User Added to Database!</h2>
+                </header>
+                <div class="w3-container">
+                    <p></p>
+                    <p id="modalUserAddedMessage"></p>
+                </div>
+                <footer class="w3-container w3-blue-grey">
+                    <p></p>
+                </footer>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function() {
+            // shows the modal
+            function showUserModal(data) {
+                document.getElementById('modalUserAddedMessage').innerHTML = data;
+                document.getElementById('modalUserAdded').style.display = 'block';
+            };
+            // 'submit user info' button
+            $('#createForm').submit(function (event) {
+                var user = {
+                    title: $('input[id=title]').val(),                  // title
+                    firstname: $('input[id=firstname]').val(),          // first name(s)
+                    surname: $('input[id=surname]').val(),              // surname
+                    mobile: $('input[id=mobile]').val(),                // mobile number
+                    email: $('input[id=email]').val(),                  // email address
+                    home1: $('input[id=home1]').val(),                  // home address line 1
+                    home2: $('input[id=home2]').val(),                  // home address line 2
+                    hometown: $('input[id=hometown]').val(),            // home town
+                    homecc: $('input[id=homecc]').val(),                // home country city
+                    homeheircode: $('input[id=homeeircode]').val(),     // home eircode
+                    ship1: $('input[id=ship1]').val(),                  // shipping address line 1
+                    ship2: $('input[id=ship2]').val(),                  // shipping address line 2
+                    shiptown: $('input[id=shiptown]').val(),            // shipping town
+                    shipcc: $('input[id=shipcc]').val(),                // shipping county city
+                    shipeircode: $('input[id=shipeircode]').val()       // shipping eircode
+                };
+                $.ajax({    // reference: https://www.freecodecamp.org/news/jquery-ajax-post-method/
+                    type: "POST",   // C (create)
+                    url: "http://localhost:1101/api/user",
+                    data: user
+                 })
+                // referenced from lecture slides
+                .done(function (data) {
+                    // reset the form for next time
+                    $('input[id=title]').val('');
+                    $('input[id=firstname]').val('');
+                    $('input[id=surname]').val('');
+                    $('input[id=mobile]').val('');
+                    $('input[id=email]').val('');
+                    $('input[id=home1]').val('');
+                    $('input[id=home2]').val('');
+                    $('input[id=hometown]').val('');
+                    $('input[id=homecc]').val('');
+                    $('input[id=homeeircode]').val('');
+                    $('input[id=ship1]').val('');
+                    $('input[id=ship2]').val('');
+                    $('input[id=shiptown]').val('');
+                    $('input[id=shipcc]').val('');
+                    $('input[id=shipeircode]').val('');
+
+                    var modalData = user.title + " " + user.firstname + " " + user.surname + " has been added to the database."
+                    showUserModal(modalData);        // to confirm data for verification of title
+                })
+                event.preventDefault();              // prevent form from submitting normally
+            });
+
+            // 'get user database' button
+            $('#retrieveForm').submit(function (event) {
+                $.ajax({
+                    type: "GET",   // R (retrieve)
+                    url: "http://localhost:1101/api/user"
+                })
+                .done(function (data) {
+                    // display database in textarea & trigger input change event
+                    $('#showDatabase').val(JSON.stringify(data, null, 2)).trigger('input');
+                });
+                event.preventDefault();     // prevent form from submitting normally
+            });
+            // resizes text area after change event is triggered (not important, just for styling)
+            $("#showDatabase").on("input", function () {
+                this.style.height = (this.scrollHeight) + "px;overflow-y:hidden;";
+                this.style.height = "auto";
+                this.style.height = (this.scrollHeight) + "px";
+            });
+            // EXTRA CREDIT: 'update user information' button
+            $('#updateForm').submit(function (event) {
+                var user = {
+                    title: $('input[id=title]').val(),                  // title
+                    firstname: $('input[id=firstname]').val(),          // first name(s)
+                    surname: $('input[id=surname]').val(),              // surname
+                    mobile: $('input[id=mobile]').val(),                // mobile number
+                    email: $('input[id=email]').val(),                  // email address
+                    home1: $('input[id=home1]').val(),                  // home address line 1
+                    home2: $('input[id=home2]').val(),                  // home address line 2
+                    hometown: $('input[id=hometown]').val(),            // home town
+                    homecc: $('input[id=homecc]').val(),                // home country city
+                    homeheircode: $('input[id=homeeircode]').val(),     // home eircode
+                    ship1: $('input[id=ship1]').val(),                  // shipping address line 1
+                    ship2: $('input[id=ship2]').val(),                  // shipping address line 2
+                    shiptown: $('input[id=shiptown]').val(),            // shipping town
+                    shipcc: $('input[id=shipcc]').val(),                // shipping county city
+                    shipeircode: $('input[id=shipeircode]').val()       // shipping eircode
+                };
+                $.ajax({
+                    type: "PUT",   // U (update)
+                    url: "http://localhost:1101/api/user",
+                    data: user
+                })
+                .done(function (data) {
+                    // reset the form for next time
+                    $('input[id=title]').val('');
+                    $('input[id=firstname]').val('');
+                    $('input[id=surname]').val('');
+                    $('input[id=mobile]').val('');
+                    $('input[id=email]').val('');
+                    $('input[id=home1]').val('');
+                    $('input[id=home2]').val('');
+                    $('input[id=hometown]').val('');
+                    $('input[id=homecc]').val('');
+                    $('input[id=homeeircode]').val('');
+                    $('input[id=ship1]').val('');
+                    $('input[id=ship2]').val('');
+                    $('input[id=shiptown]').val('');
+                    $('input[id=shipcc]').val('');
+                    $('input[id=shipeircode]').val('');
+
+                    var newModalData = user.title + " " + user.firstname + " " + user.surname + "'s information has been updated in the database."
+                    showUserModal(newModalData);        // to confirm data for verification of title
+                })
+                event.preventDefault();     // prevent form from submitting normally
+            });
+            // EXTRA CREDIT: 'delete user information' button
+            $('#deleteForm').submit(function (event) {
+                var user = {
+                    firstname: $('input[id=firstname]').val(),          // first name(s)
+                    surname: $('input[id=surname]').val(),              // surname
+                    mobile: $('input[id=mobile]').val(),                // mobile number
+                    email: $('input[id=email]').val(),                  // email address
+                };
+                $.ajax({
+                    type: "DELETE",   // D (delete)
+                    url: "http://localhost:1101/api/user",
+                    data: user
+                })
+                event.preventDefault();     // prevent form from submitting normally
+            });
+        });
+    </script>
+</html>

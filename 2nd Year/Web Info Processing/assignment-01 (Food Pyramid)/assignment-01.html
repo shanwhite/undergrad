@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Food Pyramid</title>
+        <!--link to css file-->
+        <link rel="stylesheet" href="assignment-01.css">
+        <!--font taken from google font for headers-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 style="text-align:center;">My Interactive Food Pyramid</h1>
+        <!--each indiv shelf and button + count label for each shelf-->
+        <div class="sugar shelf">
+            <button id ="sugar-decrease" class="hidden">-</button>
+            <span id = "sugar-count"> 0 </span>
+            <button id ="sugar-increase" class="hidden">+</button>
+        </div>
+        <br>   
+        <div class = "fats shelf">
+            <button id ="fats-decrease" class="hidden">-</button>
+            <span id = "fats-count"> 0 </span>
+            <button id ="fats-increase" class="hidden">+</button>
+        </div>
+        <br>
+        <div class = "meat shelf">
+            <button id ="meat-decrease" class="hidden">-</button>
+            <span id = "meat-count"> 0 </span>
+            <button id ="meat-increase" class="hidden">+</button>
+        </div>
+        <div class = "dairy shelf">
+            <button id ="dairy-decrease" class="hidden">-</button>
+            <span id = "dairy-count"> 0 </span>
+            <button id ="dairy-increase" class="hidden">+</button>
+        </div>
+        <div class = "carbs shelf">
+            <button id ="carbs-decrease" class="hidden">-</button>
+            <span id = "carbs-count"> 0 </span>
+            <button id ="carbs-increase" class="hidden">+</button>
+        </div>
+        <div class = "veg shelf">
+            <button id ="veg-decrease" class="hidden">-</button>
+            <span id = "veg-count"> 0 </span>
+            <button id ="veg-increase" class="hidden">+</button>
+        </div>
+        <br>
+        <input type="date" id="date" name="date" value="2024-02-27"></input>
+        <!--link to javascript file-->
+        <script src="assignment-01.js"></script>
+    </body>
+</html>

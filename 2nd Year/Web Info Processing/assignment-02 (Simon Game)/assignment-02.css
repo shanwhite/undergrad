@@ -1,0 +1,122 @@
+/* centralise all elements */
+.container {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+
+/* header font & style */
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    text-align: center;
+}
+
+/* all circles */
+.circle {
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* red yellow green blue circles */
+.coloured {
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+}
+
+.red {
+    background: #cc0000;
+    transform: translate(90%, -90%);
+}
+
+.yellow {
+    background: #f1c232;
+    transform: translate(-90%, 90%);
+}
+
+.green {
+    background: #6aa84f;
+    transform: translate(-90%, -90%);
+}
+
+.blue {
+    background: #3d85c6;
+    transform: translate(90%, 90%);
+}
+
+/* bigger dark grey circles behind coloured circles */
+.shadow {
+    height: 170px;
+    width: 170px;
+    background: #222222;
+    z-index: 1;
+}
+
+/* shadow for green circle */
+.one {
+    transform: translate(-79%, -79%);
+}
+/* shadow for red circle */
+.two {
+    transform: translate(79%, -79%);
+}
+/* shadow for blue circle */
+.three {
+    transform: translate(79%, 79%);
+}
+/* shadow for yellow circle */
+.four {
+    transform: translate(-79%, 79%);
+}
+
+.main {
+    height: 333px;
+    width: 333px;
+    background: #171717;
+    z-index: 0;
+}
+
+.start {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 750;
+    font-style: bold;
+    height: 40px;
+    width: 80px;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+/* span OR .score for the text to contain score */
+.score {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 750;
+    font-style: bold;
+    height: 39px;
+    width: 52px;
+    background-color: #d3d3d3;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-left: 11px; /* adjusts the right button */
+    margin-right: 11px; /* adjusts the left button */
+    border-radius: 3px;
+    z-index: 3;
+}
+
+/* red/green circle below start button */
+#status {
+    border-radius: 50%;
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #ff0800;    /* #50c878 for green */
+    transform: translate(0%, 333%);
+    z-index: 1; 
+}

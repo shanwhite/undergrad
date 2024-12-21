@@ -1,0 +1,56 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #e4f6f8;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border: 2px solid black;    /* set borders around the whole table */
+    border-collapse: collapse;    /* this collapses the borders inside the table => removes spacing from edges */
+    width: 100%;    /* fits the entire browser width */
+    table-layout:auto;
+    padding: 5px;
+}
+
+/* set borders inside the table */
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/* alternate colours for odd/even rows */
+/* src: https://www.w3schools.com/html/html_table_styling.asp */
+tr:nth-child(odd) {
+    background: #fcfbfc;
+}
+tr:nth-child(even) {
+    background: #bec3c6;
+}
+
+h1, p, .addButtons {
+    text-align: center;
+}
+
+/* headings are center-aligned */
+.heading {
+    background: #878d91;
+    text-align: center;
+    font-weight: 650;
+}
+
+/* names and IDs are left-aligned */
+.name, .id {
+    text-align: left;
+}
+
+/* numbers are right-aligned */
+.grade {
+    text-align: right;
+}
+
+.final {
+    width: 12%;
+}

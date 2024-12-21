@@ -1,0 +1,151 @@
+<!-- Tested on Firefox 123.0.1 with macOS (Sonoma 14.1.2) -->
+
+<!DOCTYPE html>
+    <head>
+        <title>Student Grades Table</title>
+        <link rel="stylesheet" href="assignment-03.css">
+        <!-- import Roboto font (Sans Serif) from google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Student Grades Table</h1>
+        <table id="table">
+            <!-- HEADINGS -->
+            <!-- <tr> = table row -->
+            <tr>
+                <!-- <th> = table heading -->
+                <th class="heading">Student Name</th>
+                <th class="heading">Student ID</th>
+                <th class="heading">Assignment 1</th>
+                <th class="heading">Assignment 2</th>
+                <th class="heading">Assignment 3</th>
+                <th class="heading">Assignment 4</th>
+                <th class="heading">Assignment 5</th>
+                <th class="heading" id="final-grade" onclick="changeGrade()">Average [%]</th>
+            </tr> 
+            <!-- Student 1 -->
+            <tr>
+                <!-- <td> = table data -->
+                <td class="name">Joe Bloggs</td>
+                <td class="id">123456789</td>
+                <!-- contenteditable = "true" allows user to edit the data in the table cell -->
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 2 -->
+            <tr>
+                <td class="name">Jim Bloggs</td>
+                <td class="id">987654321</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 3 -->
+            <tr>
+                <td class="name">Student 3</td>
+                <td class="id">333333333</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 4 -->
+            <tr>
+                <td class="name">Student 4</td>
+                <td class="id">444444444</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 5 -->
+            <tr>
+                <td class="name">Student 5</td>
+                <td class="id">555555555</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 6 -->
+            <tr>
+                <td class="name">Student 6</td>
+                <td class="id">666666666</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 7 -->
+            <tr>
+                <td class="name">Student 7</td>
+                <td class="id">777777777</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 8 -->
+            <tr>
+                <td class="name">Student 8</td>
+                <td class="id">888888888</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 9 -->
+            <tr>
+                <td class="name">Student 9</td>
+                <td class="id">999999999</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+            <!-- Student 10 -->
+            <tr>
+                <td class="name">Student 10</td>
+                <td class="id">101010101</td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="grade" contenteditable='true'></td>
+                <td class="final grade"></td>
+            </tr>
+        </table>
+        <br>
+        <p style="font-style:italic">Assignments not submitted: <span id="unsubmitted-count"></span></p>
+        <p id="count"></p>
+        <br>
+        <div class="addButtons">
+            <button id="newRowBtn">Add Student</button> <!-- adds new row -->
+            <button id="newColBtn">Add Assignment</button>   <!-- adds new column before final grade col -->
+        </div>
+    </body>
+    <script src="assignment-03.js"></script>
+</html>

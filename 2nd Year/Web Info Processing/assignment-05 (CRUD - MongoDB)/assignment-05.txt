@@ -1,0 +1,146 @@
+// DATA DUMP FOR ASSIGNMENT 05
+// CustomerInfo:
+
+"_id": 1,               
+"title": "Mr",
+"firstname": "Joe",
+"surname": "Bloggs",
+"mobile": "0891237890",
+"email": "joe.bloggs@somewhere.com"
+
+"_id": 2,
+"title": "Dr",
+"firstname": "Julie",
+"surname": "James",
+"mobile": "0834918591",
+"email": "julie@james.com"
+
+"_id": 3,
+"title": "Miss",
+"firstname": "Jocelyn",
+"surname": "Kim",
+"mobile": "0851894231",
+"email": "jocelyn.kim@mu.ie"
+
+"_id": 4,
+"title": "Mr",
+"firstname": "Bob",
+"surname": "Dylan",
+"mobile": "0878298274",
+"email": "bob.dylan@mail.com"
+
+
+
+// HomeAddress:
+
+"_id": 1,
+"addressline1": "Number 123",
+"addressline2": "Brickwell Lane"
+"town": "Dublin 3",
+"countycity": "Dublin",
+"eircode": "D03 W92B"
+
+"_id": 2,
+"addressline1": "94 Cedar Lane",
+"addressline2": "Maynooth Estates",
+"town": "Maynooth",
+"countycity": "Kildare",
+"eircode": "W23 L94Z"
+
+"_id": 3,
+"addressline1": "789 Stonewood Alley",
+"addressline2": "Ballymote Residences",
+"town": "Ballymote",
+"countycity": "Sligo",
+"eircode": "F56 PV38"
+
+"_id": 4,
+"addressline1": "Cedar 2B Courtyard Apartments",
+"addressline2": "Maynooth University",
+"town": "Maynooth",
+"countycity": "Kildare",
+"eircode": "W23 C6T0"
+
+
+
+// ShippingAddress:
+
+"_id": 1,
+"addressline1": "Number 123",
+"addressline2": "Brickwell Lane",
+"town": "Dublin 3",
+"countycity": "Dublin",
+"eircode": "D03 W92B"
+
+"_id": 2,
+"addressline1": "94 Cedar Lane",
+"addressline2": "Maynooth Estates",
+"town": "Maynooth",
+"countycity": "Kildare",
+"eircode": "W23 L94Z"
+
+"_id": 3,
+"addressline1": "Maple 3A Courtyard Apartments",
+"addressline2": "Maynooth University",
+"town": "Maynooth",
+"countycity": "Kildare",
+"eircode": "W23 C6T0"
+
+"_id": 4,
+"addressline1": "Cedar 2B Courtyard Apartments",
+"addressline2": "Maynooth University",
+"town": "Maynooth",
+"countycity": "Kildare",
+"eircode": "W23 C6T0"
+
+
+
+// ItemDetails
+
+"_id": 1,
+"manufacturer": "Apple",
+"model": "iPhone 11",
+"price": "€300"
+
+"_id": 2,
+"manufacturer": "Apple",
+"model": "iPhone 14",
+"price": "€600"
+
+"_id": 3,
+"manufacturer": "Samsung",
+"model": "Galaxy S22",
+"price": "€750"
+
+"_id": 4,
+"manufacturer": "Samsung",
+"model": "Galaxy A34",
+"price": "€400"
+
+"_id": 5,
+"manufacturer": "Xiaomi",
+"model": "Redmi 13C",
+"price": "€150"
+
+
+// OrderDetails
+
+"_id": 1,
+"customerID": 1,
+"phones": ["iPhone 14"]
+
+"_id": 2,
+"customerID": 2,
+"phones": ["iPhone 11", "Galaxy A34", "Redmi 13C"]
+
+"_id": 3,
+"customerID": 1,
+"phones": ["Galaxy S22"]
+
+"_id": 4,
+"customerID": 3,
+"phones": ["iPhone 11", "Redmi 13C"]
+
+"_id": 5,
+"customerID": 2,
+"phones": ["Galaxy A34"]
