@@ -1,6 +1,6 @@
 //
 // CS264 CA2
-// Shannen White 22252234
+// Shannen White
 //
 
 #include <iostream>
