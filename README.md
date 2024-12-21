@@ -5,7 +5,7 @@ A compilation of my coding assignments throughout my undergraduate degree: BSc M
 1st Year
 * CS161 - Introduction to Computer Science I (Java)
 * CS162 - Introduction to Computer Science II (Java)
-* [CS171 - Computer Systems 1 (Processing, Java)](https://github.com/shanwhite/CO2-Calculator)
+* [CS171 - Computer Systems 1](https://github.com/shanwhite/CO2-Calculator) (Processing, Java)
 
 2nd Year
 * CS210 - Algorithms & Data Structures I (Java)
@@ -14,5 +14,5 @@ A compilation of my coding assignments throughout my undergraduate degree: BSc M
   
 3rd Year
 * CS264 - Software Design (C++)
-* [CS322 - Music Programming 2](https://github.com/shanwhite/binary-synthesizer)
-* [CS385 - Mobile App Development](https://github.com/shanwhite/petal)
+* [CS322 - Music Programming 2](https://github.com/shanwhite/binary-synthesizer) (Tone.js)
+* [CS385 - Mobile App Development](https://github.com/shanwhite/petal) (React)
