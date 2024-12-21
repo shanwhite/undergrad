@@ -3,16 +3,16 @@ A compilation of my coding assignments throughout my undergraduate degree: BSc M
 
 ## List of Modules
 1st Year
-* CS161 - Introduction to Computer Science I (Java)
-* CS162 - Introduction to Computer Science II (Java)
-* [CS171 - Computer Systems 1](https://github.com/shanwhite/CO2-Calculator) (Processing, Java)
+* Introduction to Computer Science I (Java)
+* Introduction to Computer Science II (Java)
+* [Computer Systems I](https://github.com/shanwhite/CO2-Calculator) (Processing, Java)
 
 2nd Year
-* CS210 - Algorithms & Data Structures I (Java)
-* CS211 - Algorithms & Data Structures II (Java)
-* CS230 - Web Information Processing (HTML, CSS, JS and more)
+* Algorithms & Data Structures I (Java)
+* Algorithms & Data Structures II (Java)
+* Web Information Processing (HTML, CSS, JS and more)
   
 3rd Year
-* CS264 - Software Design (C++)
-* [CS322 - Music Programming 2](https://github.com/shanwhite/binary-synthesizer) (Tone.js)
-* [CS385 - Mobile App Development](https://github.com/shanwhite/petal) (React)
+* Software Design (C++)
+* [Music Programming 2](https://github.com/shanwhite/binary-synthesizer) (Tone.js)
+* [Mobile App Development](https://github.com/shanwhite/petal) (React)
